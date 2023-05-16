@@ -1,5 +1,6 @@
 using BrouwerService.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,14 +16,18 @@ builder.Services.AddScoped<IBrouwerRepository, BrouwerRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => c.EnableAnnotations());
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
+	app.UseSwagger(c =>
+	c.PreSerializeFilters.Add((swagger, request) =>
+	swagger.Servers = new List<OpenApiServer>
+	{ new OpenApiServer { Url = $"{request.Scheme}://{request.Host.Value}" } })); 
+	
 	app.UseSwaggerUI();
 }
 
