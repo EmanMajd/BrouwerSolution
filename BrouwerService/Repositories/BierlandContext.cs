@@ -11,4 +11,6 @@ public class BierlandContext : DbContext
 
 
 	public  DbSet<Brouwer> Brouwers { init; get; }
+	public  DbSet<Woonplaats> Woonplaatsen { init; get; }
+	public  DbSet<Filiaal> Filialen { init; get; }
 }
