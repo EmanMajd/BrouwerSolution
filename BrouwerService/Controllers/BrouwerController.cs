@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Runtime.CompilerServices;
 
 namespace BrouwerService.Controllers;
 
@@ -12,8 +13,13 @@ namespace BrouwerService.Controllers;
 public class BrouwerController : ControllerBase
 {
 	readonly IBrouwerRepository repository;
-	public BrouwerController(IBrouwerRepository repository) =>
-	this.repository = repository;
+	readonly IHttpClientFactory clientFactory;
+	public BrouwerController(IBrouwerRepository repository, IHttpClientFactory clientFactory)
+	{
+		this.repository = repository;
+		this.clientFactory = clientFactory;
+	}
+
 
 	[SwaggerOperation("Alle brouwers")] [HttpGet]
 	public async Task<ActionResult> FindAll() => 

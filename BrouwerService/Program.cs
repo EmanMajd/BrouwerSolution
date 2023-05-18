@@ -18,6 +18,7 @@ builder.Services.AddScoped<IFiliaalRepository, FiliaalRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => c.EnableAnnotations());
 builder.Services.AddCors();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
