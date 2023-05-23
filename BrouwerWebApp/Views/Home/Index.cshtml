@@ -1,7 +1,8 @@
-﻿@model List<Brouwer> @{
+﻿@model List<Brouwer> 
+@{
 ViewData["Title"] = "Brouwers"; }
 <ul> @foreach (var brouwer in Model!)
-{ <li><a href="#" data-id="@brouwer.Id">@brouwer.Naam</a></li> 
+{ <li><a href="#" data-id="@brouwer.Id">@brouwer.Naam</a></li> 
 }
 </ul>
 <dl>
