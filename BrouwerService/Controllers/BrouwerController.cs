@@ -20,6 +20,10 @@ public class BrouwerController : ControllerBase
 		this.clientFactory = clientFactory;
 	}
 
+	public BrouwerController(IBrouwerRepository repository)
+	{
+		this.repository = repository;
+	}
 
 	[SwaggerOperation("Alle brouwers")] [HttpGet]
 	public async Task<ActionResult> FindAll() => 

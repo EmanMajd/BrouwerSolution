@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrouwerWebApp", "BrouwerWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalBrouwerService", "MinimalBrouwerService\MinimalBrouwerService.csproj", "{3C907718-2CFC-4C0C-9EAE-EEC09DF11747}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrouwerServiceUnitTests", "BrouwerServiceUnitTests\BrouwerServiceUnitTests.csproj", "{69FA3506-5B39-40D3-95E3-2F5469574D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrouwerServiceIntegrationTests", "BrouwerServiceIntegrationTests\BrouwerServiceIntegrationTests.csproj", "{F97C11A3-4A3E-428C-AB7D-C5B04E94B5C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{3C907718-2CFC-4C0C-9EAE-EEC09DF11747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C907718-2CFC-4C0C-9EAE-EEC09DF11747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C907718-2CFC-4C0C-9EAE-EEC09DF11747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FA3506-5B39-40D3-95E3-2F5469574D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FA3506-5B39-40D3-95E3-2F5469574D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FA3506-5B39-40D3-95E3-2F5469574D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FA3506-5B39-40D3-95E3-2F5469574D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97C11A3-4A3E-428C-AB7D-C5B04E94B5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97C11A3-4A3E-428C-AB7D-C5B04E94B5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97C11A3-4A3E-428C-AB7D-C5B04E94B5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97C11A3-4A3E-428C-AB7D-C5B04E94B5C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

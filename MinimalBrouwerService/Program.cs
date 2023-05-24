@@ -36,6 +36,8 @@ app.MapDelete("/brouwers/{id}", VerwijderBrouwer);
 
 app.MapPost("brouwers", VoegBrouwerToe);
 
+app.MapPut("brouwers/{id}", WijzigBrouwer);
+
 app.Run();
 
 async Task<IResult> VerwijderBrouwer(int id,
@@ -62,4 +64,27 @@ IBrouwerRepository repository)
 		await repository.InsertAsync(brouwer);
 		return Results.Created($"brouwers/{brouwer.Id}", null);
 	}
+}
+
+async Task<IResult> WijzigBrouwer(int id, Brouwer brouwer,
+IBrouwerRepository repository)
+{
+	if (!MiniValidator.TryValidate(brouwer, out var errors))
+	{
+		return Results.BadRequest(errors);
+	}
+	try 
+	{
+			brouwer.Id = id;
+			await repository.UpdateAsync(brouwer);
+			return Results.Ok();
+		}
+	catch (DbUpdateConcurrencyException)
+		{
+			return Results.NotFound();
+		}
+		catch
+		{
+			return Results.Problem();
+		}
 }
