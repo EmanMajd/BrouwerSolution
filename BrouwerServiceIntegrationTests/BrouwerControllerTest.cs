@@ -58,7 +58,7 @@ public class BrouwerControllerTest
 	[TestMethod]
 	public void GetMetBestaandeBrouwerGeeftOK()
 	{
-		mock.Setup(repo => repo.FindByIdAsync(2)).Returns(Task.FromResult<Brouwer?>(brouwer1));
+		mock.Setup(repo => repo.FindByIdAsync(1)).Returns(Task.FromResult<Brouwer?>(brouwer1));
 		var response = client.GetAsync("brouwers/1").Result;
 		Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 		mock.Verify(repo => repo.FindByIdAsync(1));
