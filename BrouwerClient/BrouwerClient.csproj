@@ -10,11 +10,13 @@
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.0.15" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
     <PackageReference Include="ServiceStack.Client" Version="6.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BrouwerService\BrouwerService.csproj" />
+    <ProjectReference Include="..\BrouwerWebApp\BrouwerWebApp.csproj" />
   </ItemGroup>
 
 </Project>

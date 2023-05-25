@@ -13,14 +13,13 @@ namespace BrouwerService.Controllers;
 public class BrouwerController : ControllerBase
 {
 	readonly IBrouwerRepository repository;
-	readonly IHttpClientFactory clientFactory;
-	public BrouwerController(IBrouwerRepository repository, IHttpClientFactory clientFactory)
+	public BrouwerController(IBrouwerRepository repository)
 	{
 		this.repository = repository;
-		this.clientFactory = clientFactory;
 	}
 
 	
+
 	[SwaggerOperation("Alle brouwers")] [HttpGet]
 	public async Task<ActionResult> FindAll() => 
 		base.Ok(await repository.FindAllAsync()); [HttpGet("{id}")]

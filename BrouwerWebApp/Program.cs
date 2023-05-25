@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BierlandContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("bierland")));
 builder.Services.AddScoped<IBrouwerRepository, BrouwerRepository>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

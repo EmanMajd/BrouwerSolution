@@ -9,10 +9,13 @@ namespace BrouwerWebApp.Controllers
 	{
 		private readonly ILogger<HomeController> _logger;
 		readonly IBrouwerRepository repository;
+		//readonly IHttpClientFactory clientFactory;
+
 		public HomeController(ILogger<HomeController> logger, IBrouwerRepository repository)
 		{
 			_logger = logger;
 			this.repository = repository;
+
 		}
 
 		public async Task<IActionResult> Index() => View(await repository.FindAllAsync());

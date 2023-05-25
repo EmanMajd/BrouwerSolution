@@ -1,6 +1,5 @@
 ﻿
 
-
 // delete brouwer
 /*using System.Net;
 Console.Write("Id:");
@@ -83,7 +82,10 @@ switch (response.StatusCode)
 }*/
 
 // brouwer toevoegen
+using BrouwerWebApp.Controllers;
 using MassTransit.Clients;
+using Microsoft.AspNetCore.Mvc.Testing;
+using ServiceStack;
 using System.Net;
 Console.Write("Naam:");
 var naam = Console.ReadLine()!;
@@ -93,6 +95,9 @@ Console.Write("Gemeente:");
 var gemeente = Console.ReadLine()!;
 var brouwer = new Brouwer() { Naam = naam, Postcode = postcode, Gemeente = gemeente };
 using var client =  new HttpClient();
+//var clientFactory = new WebApplicationFactory<HomeController>();
+
+//using var client = clientFactory.CreateClient();
 var response =
 await client.PostAsJsonAsync("http://localhost:5000/brouwers", brouwer); 
 if (response.StatusCode == HttpStatusCode.Created) 
